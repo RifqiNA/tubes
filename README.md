@@ -126,3 +126,7 @@ lxc-create -n lxc_db_server -t download -- --dist debian --release buster --arch
 - nano roles/laravel/templates/landing
 
 ![image](https://user-images.githubusercontent.com/93064971/152481491-33a865e0-3df4-44aa-8f36-f71b1e2cc299.png)
+
+- hasil
+
+![image](https://user-images.githubusercontent.com/93064971/152482940-0a28bc88-4c9c-457e-8545-c854db7b6272.png)
