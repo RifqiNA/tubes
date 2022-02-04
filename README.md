@@ -33,8 +33,6 @@ First we make container :
 lxc-create -n lxc_db_server -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
 ```
 
-  ![image](https://user-images.githubusercontent.com/93064971/152371641-bd6c06da-c466-4725-9c59-80a620007217.png)
-
 - Setting all of containers auto start
 
   ![image](https://user-images.githubusercontent.com/93064971/152480230-ccf9847c-d930-4b1c-85ca-4828a892c222.png)
