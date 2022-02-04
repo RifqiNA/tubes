@@ -14,45 +14,38 @@ First we make container :
 
 - 6 instance LXC ubuntu 20.04 PHP 7.4
 ```
-sudo lxc-create -n ubuntu_php7.4 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n ubuntu_php7.4_2 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n ubuntu_php7.4_3 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n ubuntu_php7.4_4 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n ubuntu_php7.4_5 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n ubuntu_php7.4_6 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_1 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_2 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_3 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_4 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_5 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php7_6 -t download -- --dist ubuntu --release focal --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
 ```
 
 - 2 instance LXC debian 10 PHP 5.6
 ```
-sudo lxc-create -n debian_php5.6 -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
-sudo lxc-create -n debian_php5.6_2 -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php5_1 -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+    lxc-create -n lxc_php5_2 -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
 ```
 
 - 1 instance LXC debian 10 mariadb server
 ```
-sudo lxc-create -n lxc_mariadb -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
+lxc-create -n lxc_db_server -t download -- --dist debian --release buster --arch amd64 --force-cache --no-validate --server images.linuxcontainers.org
 ```
 
-![image](https://user-images.githubusercontent.com/93064971/152371641-bd6c06da-c466-4725-9c59-80a620007217.png)
+  ![image](https://user-images.githubusercontent.com/93064971/152371641-bd6c06da-c466-4725-9c59-80a620007217.png)
 
 - Setting all of containers auto start
 
-    ```markdown
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/lxc_mariadb/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/debian_php5.6/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/debian_php5.6_2/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4_2/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4_3/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4_4/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4_5/config
-    echo "lxc.start.auto = 1" >> /var/lib/lxc/ubuntu_php7.4_6/config
-    ```
+  ![image](https://user-images.githubusercontent.com/93064971/152480230-ccf9847c-d930-4b1c-85ca-4828a892c222.png)
+
 - Setting hosts and adding IP Address and Domain for each containers in VM ubuntu server 
 
-![image](https://user-images.githubusercontent.com/93064971/152372435-a08c1609-9f21-4655-ab95-57f575f423e8.png)
+  ![image](https://user-images.githubusercontent.com/93064971/152480271-9048233e-e7ae-48e8-918e-be2a720c394c.png)
 
-- Configuration lxc_mariadb, debian_php5.6, debian_php5.6_2, ubuntu_php7.4, ubuntu_php7.4_2, ubuntu_php7.4_3, ubuntu_php7.4_4, ubuntu_php7.4_5 and ubuntu_php7.4_6 like this       commands below
+- Configuration lxc_db_server, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6 like this commands below
+
+- Configuration lxc_db_server, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6 like this commands below
 
 - Install ssh server
 
@@ -76,13 +69,13 @@ sudo lxc-create -n lxc_mariadb -t download -- --dist debian --release buster --a
     service sshd restart
     ```
 
-- Setting password for lxc_mariadb, debian_php5.6, debian_php5.6_2, ubuntu_php7.4, ubuntu_php7.4_2, ubuntu_php7.4_3, ubuntu_php7.4_4, ubuntu_php7.4_5 and ubuntu_php7.4_6
+- Setting password for lxc_db_server ssh, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6
 
     ```markdown
     passwd (ex: 1)
     ```
 
-- Log out from lxc_mariadb, debian_php5.6, debian_php5.6_2, ubuntu_php7.4, ubuntu_php7.4_2, ubuntu_php7.4_3, ubuntu_php7.4_4, ubuntu_php7.4_5 and ubuntu_php7.4_6
+- Log out from lxc_db_server, lxc_php5_1, and lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6
 
     ```markdown
     exit
@@ -94,24 +87,7 @@ sudo lxc-create -n lxc_mariadb -t download -- --dist debian --release buster --a
     cd ~/ansible/tubes
     ```
 
-ansible hosts
+- Creating hosts and adding script
 
-![image](https://user-images.githubusercontent.com/93064971/152370357-39b7a8d2-ec1b-4462-b77f-be31b37563a4.png)
 
-install-ci.yml
-
-![image](https://user-images.githubusercontent.com/93064971/152370626-f345a47c-ace0-4d87-abc7-42408c343e29.png)
-
-install-laravel.yml
-
-![image](https://user-images.githubusercontent.com/93064971/152370846-47bd5919-c131-47a6-b18e-8ad746fca5a8.png)
-
-install-wp.yml
-
-![image](https://user-images.githubusercontent.com/93064971/152371010-a604fcbe-4c61-4fc9-a11f-a5f6cb7bc89d.png)
-
-Creating directory roles/wp, and creating tasks, handlers, templates in db directory
-
-Creating main.yml in roles/wp/handlers and adding script configuration
-nano roles/wp/handlers
 
