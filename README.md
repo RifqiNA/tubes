@@ -110,3 +110,8 @@ install-wp.yml
 
 ![image](https://user-images.githubusercontent.com/93064971/152371010-a604fcbe-4c61-4fc9-a11f-a5f6cb7bc89d.png)
 
+Creating directory roles/wp, and creating tasks, handlers, templates in db directory
+
+Creating main.yml in roles/wp/handlers and adding script configuration
+nano roles/wp/handlers
+
