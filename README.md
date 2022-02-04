@@ -89,5 +89,40 @@ lxc-create -n lxc_db_server -t download -- --dist debian --release buster --arch
 
 - Creating hosts and adding script
 
+![image](https://user-images.githubusercontent.com/93064971/152480551-5e9d0d4b-ee4f-4209-8abd-e9387a304224.png)
 
+- Setting sites-available pada vm menggunakan nama kelompok12.fpsas dan symlink ke sites-enabled
 
+![image](https://user-images.githubusercontent.com/93064971/152480797-8966920c-5050-4409-980e-53fd9ccb6e0c.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152480822-9b63fb4c-6e8e-4e72-b474-0f1038716ab5.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152480840-8e267b57-191c-433e-a155-c750e2729a36.png)
+
+- Creating install-laravel.yml file and adding configuration
+
+![image](https://user-images.githubusercontent.com/93064971/152480979-4d4ea627-b847-48c6-8ffb-377b49708aca.png)
+
+- Creating directory roles/laravel, and creating tasks, handlers, templates in db directory
+
+- nano roles/laravel/handlers/main.yml
+
+![image](https://user-images.githubusercontent.com/93064971/152481115-107816ee-e304-47f4-8880-1bdf6656187a.png)
+
+- nano roles/laravel/tasks/main.yml
+
+![image](https://user-images.githubusercontent.com/93064971/152481291-26fc3fba-6bd3-4a86-b013-bc69de4e87f9.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152481320-b6378d42-877c-46ad-ba85-3cf9756c0f30.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152481333-a03f892d-6199-4aa8-97ff-080133ac026c.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152481361-f6bf5024-c07d-492f-98ae-baa688dbc052.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152481373-f1d9f70c-9f5e-4dd9-91b9-dd8149e956d9.png)
+
+![image](https://user-images.githubusercontent.com/93064971/152481465-a7e6913f-8d7a-45b3-9b4b-7be51dbdf70e.png)
+
+- nano roles/laravel/templates/landing
+
+![image](https://user-images.githubusercontent.com/93064971/152481491-33a865e0-3df4-44aa-8f36-f71b1e2cc299.png)
