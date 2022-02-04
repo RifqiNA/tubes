@@ -43,9 +43,7 @@ lxc-create -n lxc_db_server -t download -- --dist debian --release buster --arch
 
   ![image](https://user-images.githubusercontent.com/93064971/152480271-9048233e-e7ae-48e8-918e-be2a720c394c.png)
 
-- Configuration lxc_db_server, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6 like this commands below
-
-- Configuration lxc_db_server, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6 like this commands below
+- Configuration lxc_db_server, lxc_php5_1, lxc_php5_2, lxc_php7_1, lxc_php7_2, lxc_php7_3,  lxc_php7_4, lxc_php7_5 and lxc_php7_6
 
 - Install ssh server
 
